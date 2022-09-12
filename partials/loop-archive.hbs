@@ -1,0 +1,8 @@
+{{!-- The post feed for archive pages --}}
+<div class="post-feed inner-wide">
+    {{#foreach posts visibility="all"}}
+        {{> "loop-item"}}
+    {{/foreach}}
+</div>
+{{!-- Previous/next page links  --}}
+{{pagination}}

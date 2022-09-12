@@ -1,0 +1,40 @@
+{{!-- The header of the theme --}}
+<header class="navbar outer">
+    <div class="navbar-inside">
+        <div class="navbar-branding">
+            {{#if @site.logo}}
+            <p class="navbar-logo"><a href="{{@site.url}}"><img src="{{img_url @site.logo size="xs"}}" alt="{{@site.title}}" /></a></p>
+            {{/if}}
+            {{#is "index"}}
+            <h1 class="navbar-title{{#if @site.logo}} screen-reader-text{{/if}}"><a href="{{@site.url}}">{{@site.title}}</a></h1>
+            {{else}}
+            <p class="navbar-title{{#if @site.logo}} screen-reader-text{{/if}}"><a href="{{@site.url}}">{{@site.title}}</a></p>
+            {{/is}}
+        </div>
+        <nav class="navbar-menu" aria-label="Primary Navigation">
+            {{navigation}}
+            <ul class="actions">
+                {{!-- If members enabled, show member related menu items --}}
+                {{#if @site.members_enabled}}
+                    {{!-- Not logged in: show subscribe and sign in links --}}
+                    {{#unless @member}}
+                     <li class="action-item action-subscribe">
+                        <a href="javascript:" data-portal="signup">{{t "Subscribe"}}</a>
+                    </li>
+                    <li class="action-item">
+                        <a href="javascript:" data-portal="signin">{{t "Sign in"}}</a>
+                    </li>
+                    {{!-- Logged in: show account link --}}
+                    {{else}}
+                    <li class="action-item action-button">
+                        <a class="btn btn-icon btn-outlined" href="javascript:" data-portal="account"><span class="screen-reader-text">{{t "Account"}}</span>{{> "icons/user"}}</a>
+                    </li>
+                    {{/unless}}
+                {{/if}}
+                <li class="action-item action-button">
+                    <button class="sidebar-toggle btn btn-icon"><span class="screen-reader-text">{{t "Menu"}}</span>{{> "icons/more"}}</button>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</header>

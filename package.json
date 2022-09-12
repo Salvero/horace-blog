@@ -1,0 +1,113 @@
+{
+  "name": "horace",
+  "description": "A simple single-author Ghost theme for writers and bloggers.",
+  "demo": "https://horace.justgoodthemes.eu/",
+  "version": "4.0.0",
+  "engines": {
+    "ghost": ">=4.0.0"
+  },
+  "screenshots": {
+    "desktop": "assets/screenshot-desktop.jpg",
+    "mobile": "assets/screenshot-mobile.jpg"
+  },
+  "author": {
+    "name": "Just Good Themes",
+    "email": "hello@justgoodthemes.com",
+    "url": "https://justgoodthemes.com"
+  },
+  "keywords": [
+    "ghost",
+    "theme",
+    "ghost-theme"
+  ],
+  "config": {
+    "posts_per_page": 5,
+    "card_assets": {
+      "exclude": [
+        "blockquote",
+        "bookmark",
+        "gallery"
+      ]
+    },
+    "image_sizes": {
+      "xxs": {
+        "width": 150
+      },
+      "xs": {
+        "width": 300
+      },
+      "s": {
+        "width": 600
+      },
+      "m": {
+        "width": 800
+      },
+      "l": {
+        "width": 1100
+      },
+      "xl": {
+        "width": 1600
+      }
+    },
+    "custom": {
+      "enable_content_animation": {
+        "type": "boolean",
+        "default": true
+      },
+      "enable_about_in_sidebar": {
+        "type": "boolean",
+        "default": true
+      },
+      "about_title": {
+        "type": "text",
+        "default": "About Horace"
+      },
+      "about_text": {
+        "type": "text",
+        "default": "Horace is a simple Ghost theme for writers and bloggers. Explore it yourself. Feedback, questions, or ideas? Drop us a line via email."
+      },
+      "enable_hero": {
+        "type": "boolean",
+        "default": true,
+        "group": "homepage"
+      },
+      "hero_avatar": {
+        "type": "image",
+        "group": "homepage"
+      },
+      "hero_avatar_alt_text": {
+        "type": "text",
+        "group": "homepage"
+      },
+      "hero_title": {
+        "type": "text",
+        "default": "Hi there!",
+        "group": "homepage"
+      },
+      "hero_text": {
+        "type": "text",
+        "default": "My name is Daniel Bennett. I'm a freelance front-end developer, author and speaker based in Austin, TX. It's nice to meet you.",
+        "group": "homepage"
+      },
+      "hero_background_image": {
+        "type": "image",
+        "group": "homepage"
+      },
+      "enable_author_box": {
+        "type": "boolean",
+        "default": true,
+        "group": "post"
+      },
+      "enable_disqus": {
+        "type": "boolean",
+        "default": false,
+        "group": "post"
+      },
+      "disqus_shortname": {
+        "type": "text",
+        "default": "",
+        "group": "post"
+      }
+    }
+  }
+}

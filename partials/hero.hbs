@@ -1,0 +1,32 @@
+{{!-- The hero section --}}
+<div class="hero">
+
+    {{!-- Adds publication cover image in the background --}}
+    {{#if @custom.hero_background_image}}
+        <div class="hero-bg" style="background-image: url({{@custom.hero_background_image}})"></div>
+    {{/if}}
+
+    {{!-- Includes the theme header - partials/header.hbs --}}
+    {{> header}}
+
+    <section class="hero-container outer">
+        <div class="hero-content inner">
+            {{#if @custom.hero_avatar}}
+                <div class="hero-avatar">
+                    <img src="{{@custom.hero_avatar}}" alt="{{#if @custom.hero_avatar_alt_text}}{{@custom.hero_avatar_alt_text}}{{/if}}" class="avatar" />
+                </div>
+            {{/if}}
+            {{#if @custom.hero_title}}
+                <h2 class="hero-title h1">{{@custom.hero_title}}</h2>
+            {{/if}}
+            {{#if @custom.hero_text}}
+                <p class="hero-text">{{@custom.hero_text}}</p>
+            {{/if}}
+            {{!-- Includes the social links list - partials/social-links.hbs --}}
+            <div class="hero-social">
+                {{> "social-links"}}
+            </div>
+        </div>
+    </section>
+
+</div>

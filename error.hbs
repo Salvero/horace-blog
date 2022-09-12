@@ -1,0 +1,25 @@
+{{!< default-custom}}
+{{!-- The tag above means - insert everything in this file into the {body} of the default-custom.hbs template --}}
+
+{{#contentFor "custom-meta-title"}}{{statusCode}}{{/contentFor}}
+{{#if @site.cover_image}}
+    {{#contentFor "background-image-style"}}
+        <style>.custom-template .site:before { background-image: url({{img_url @site.cover_image}}); }</style>
+    {{/contentFor}}
+{{/if}}
+
+<body class="custom-template{{#if @custom.enable_content_animation}} animate-fadeInDown{{/if}}">
+    <div id="page" class="site">
+        <main id="main" class="content outer">
+            <div class="page-body inner">
+                <h1 class="page-title">{{statusCode}}</h1>
+                <div class="page-description">
+                    <p>{{message}}</p>
+                    <p><a class="btn btn-outlined" href="{{@site.url}}">{{> "icons/arrow-left"}}<span class="btn-content">{{t "Back to homepage"}}</span></a></p>
+                </div>
+            </div>
+        </main>
+    </div>
+    {{!-- Outputs important scripts and data --}}
+    {{ghost_foot}}
+</body>

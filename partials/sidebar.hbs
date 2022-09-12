@@ -1,0 +1,31 @@
+{{!-- The sidebar of the theme --}}
+<aside class="sidebar">
+    <div class="sidebar-scrollable">
+        <div class="sidebar-inside">
+            <button id="sidebar-hide" class="sidebar-toggle btn btn-icon"><span class="screen-reader-text">{{t "Close Sidebar"}}</span>{{> "icons/close"}}</button>
+            {{#if @site.navigation}}
+            {{!-- Includes navigation for small screens - partials/navigation.hbs --}}
+            <nav id="sidebar-nav" class="widget widget-nav">
+                <h2 class="widget-title small-title">{{t "Explore Site"}}</h2>
+                {{navigation}}
+               {{!-- If members enabled and not logged in, show subscribe link --}}
+                {{#if @site.members_enabled}}
+                {{#unless @member}}
+                <ul class="actions">
+                    <li class="action-item action-button"><a class="btn" href="javascript:" data-portal="signup">{{t "Subscribe"}}</a></li>
+                </ul>
+                {{/unless}}
+                {{/if}}
+            </nav>
+            {{/if}}
+            {{!-- Includes the about widget if enabled in settings - partials/widget-about.hbs --}}
+            {{#if @custom.enable_about_in_sidebar}}
+            {{> "widget-about"}}
+            {{/if}}
+            {{!-- Includes the recent posts widget - partials/widget-recent.hbs --}}
+            {{> "widget-recent"}}
+            {{!-- Includes the tagcloud widget - partials/widget-tagcloud.hbs --}}
+            {{> "widget-tagcloud"}}
+        </div>
+    </div>
+</aside>
